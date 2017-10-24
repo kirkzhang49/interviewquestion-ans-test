@@ -1,0 +1,31 @@
+	
+Accepted Offer
+Positive Experience
+Difficult Interview
+Application
+I applied through a recruiter. The process took 3 weeks. I interviewed at Facebook.
+
+Interview
+A recruiter contacted me. After confirming that I would like to interview for the position,
+ I was asked basic questions around networking, Linux system administration, and programming. 
+ A graduating Computer Science student should expect to pass this with little difficulty.
+
+Next was a phone interview for programming. I was asked to take input text and identify the 
+unique words in the text and how many times each word occurred. 
+Edge cases were important as was the performance.
+ Interviewer asked for an analysis of the run-time and memory usage. 
+ Any second-year CS student should have no problem completing this in far less than the allocated time.
+
+Next was a phone interview for systems administration. I was given the bare minimum information
+ possible about a system and told to describe how I discover running services and potential issues. 
+ As I progressed, the interviewer gave me information reasonable based on my descriptions and identified
+  when I had correctly discovered a problem or possible problem. In investigating problems, 
+  it was important to be specific about why the problem was occurring and how to address the issue. 
+  When addressing problems, the performance, scalability, and maintainability of the solution was very 
+  important. Be prepared to identify how a file system is mounted or if it's local, and be prepared 
+  to encounter a single central share mounted by many servers with active read/write activity 
+  from them all. This will be difficult for anyone without good real-world Linux systems administration
+   experience.
+   ——————————————————————————————————————————————————————————————————————————————————————
+    Extract and modify emails/urls from html files.  go cs35l
+    hostname port1 port2  -> netstate |grep port1 port2 

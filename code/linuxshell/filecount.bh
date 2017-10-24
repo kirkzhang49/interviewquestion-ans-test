@@ -1,0 +1,2 @@
+//count files in current directory
+ls -l *.java| grep -v ^l | wc -l 

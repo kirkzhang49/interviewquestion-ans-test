@@ -1,0 +1,35 @@
+1.找出一個int array裡面最多重複的 我問他：是說出現次數多於一半的（leetcode majority）？
+ 他：如果是的話你打算怎麼做？ 我說：用一個counter加加減減，然後分析一下time&space 他說：good
+ ，那次數不一定超過一半呢？ 我說：hashmap，然後最後再找map裡面最大的 他問了一下time & space，
+ 然後問了map & unordermap的差別（我用c＋＋） 之後，說不用hashmap的方法，
+ 我說可以用radix sort or bucket sort 可以平均達到O(nk) 可是這樣要花一些space在sort 
+ 各別要我分析了一下，然後就讓我做題，說sort可以讓我直接用system的。 大概一分鐘寫完，短短的。
+  他：如果要回傳counter和回傳最多次數的分別怎麼做（心想：不是一樣？就換成max_count）
+   然後問我的code會不會有模糊的答案，我說會：因為input是1,1,2,2 （個數一樣）的話會回傳第一個
+   （看max_count和temp_max怎麼判斷的） 他問我怎麼解：我說可以傳一個值例如：-1。然後讓我寫了一下 
+   後來他問：現在這樣會不會有問題？我說會：假如input是 -1,-1,1答案本來就是-1這樣不知道是因為錯誤（沒有解）還是-1 
+   問我怎麼解決：我說可以寫exception 或是改變某個flag，他讓我寫了一下 int findMostRepeat 
+   (vector &input, bool &flag) 他說：GOOD，沒問題了（印度人真的很會一直good, right, awsome....誰知道他到底在想什麼)
+    中間我有個想法就跟他說： 我說假如可以先走遍一次array，知道input的int range的話，可以把element value 
+    當成index value，去改變原本array的值。 最後再走一次整個array，最大的那個element在的index就是原本最大的int value！
+     他說：good，那這個作法的time呢？我說：O(n) 但是要走三次，如果n很大，其實時間也不少。 之後就沒讓我做題目了，
+     不知道是不是放棄我了＝＝ 後來開始問stl container的問題：
+    1. what is stack? 我:LIFO 
+    2. how do you implement it in easist way? 我：vector，直接就有puch_back, pop_back 
+    3. 不能用vector，用array行嘛？ 我：像是malloc一樣先給定一個default size，如果超過就要new一個新的然後搬移data。
+    （他問我這樣做的time 是多少） 
+    4. 那怎麼樣可以動態給memory size 我：linked list，可以用個指標放在head and tail 
+    5. 這樣delete呢？ 我：pop tail, and update new tail（缺點要重新走一次找出tail，除非用double link）
+     6. 如果不能用double link? 我：那就push時放在head，pop時也delete head，只需額外一個pointer就好。 
+     7. good! 那你知道什麼是queue? 我：FIFO，不過C++還有很特殊的priority queue就是pop the highest priority。 
+     8. 怎麼用queue做出stack? 我：用兩個queue，交換。 
+     9. 只用一個呢？ 我：每次要pop之前，把最前面的放到tail。可能會要額外空間 1
+     0. 好點的方法？ 我：queue.insert(queue.remove())這樣就不用，但是還是要一直搬移。 
+     11. 可以用linked list做嘛？ 我：可以，那就一樣。只是會有一個問題，同時要提供stack and queue的功能。
+     勢必有一個pop會需要uprdate pointer 然後，各別分析一下。他就說：ok 我們時間到了（每次聽到都不知道是好還是壞，
+     是答太慢所以時間到了還是怎樣...） 最後問了一些aws使用上遇到的問題（他說他是aws web console的），
+     我提供一些想法 他說他們公司內部有在做，不過還不能跟我說（= =），最後就說 it's good to talk to you! bye
+      就直接掛掉電話了！！！ 我：.................. 
+
+链接: https://instant.1point3acres.com/thread/116400
+来源: 一亩三分地

@@ -1,0 +1,5 @@
+(11/01/2015-04:00:00) :: START
+(11/01/2015-04:00:00) :: CONNECTED. more info on 1point3acres.com
+(11/01/2015-04:30:00) :: DISCONNECTED
+(11/01/2015-04:45:00) :: CONNECTED. visit 1point3acres.com for more.
+(11/01/2015-05:00:00) :: SHUTDOWN

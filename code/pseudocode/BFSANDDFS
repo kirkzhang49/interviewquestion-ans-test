@@ -1,0 +1,34 @@
+breadth first search:
+
+    unmark all vertices
+    choose some starting vertex x
+    mark x
+    list L = x
+    tree T = x
+    while L nonempty
+    choose some vertex v from front of list
+    visit v
+    for each unmarked neighbor  w
+        mark w
+        add it to end of list
+        add edge vw to T
+
+
+Depth first search
+    preorder(node v)
+    {
+    visit(v);
+    for each child w of v
+        preorder(w);
+    }
+
+        dfs(vertex v)
+    {
+    visit(v);
+    for each neighbor w of v
+        if w is unvisited
+        {
+        dfs(w);
+        add edge vw to tree T
+        }
+    }

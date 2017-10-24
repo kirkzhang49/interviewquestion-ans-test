@@ -1,0 +1,74 @@
+ O(|E|+|V|log |V|)
+ 
+ 1  function Dijkstra(Graph, source):
+ 2
+ 3      create vertex set Q
+ 4
+ 5      for each vertex v in Graph:             // Initialization
+ 6          dist[v] ← INFINITY                  // Unknown distance from source to v
+ 7          prev[v] ← UNDEFINED                 // Previous node in optimal path from source
+ 8          add v to Q                          // All nodes initially in Q (unvisited nodes)
+ 9
+10      dist[source] ← 0                        // Distance from source to source
+11      
+12      while Q is not empty:
+13          u ← vertex in Q with min dist[u]    // Source node will be selected first
+14          remove u from Q 
+15          
+16          for each neighbor v of u:           // where v is still in Q.
+17              alt ← dist[u] + length(u, v)
+18              if alt < dist[v]:               // A shorter path to v has been found
+19                  dist[v] ← alt 
+20                  prev[v] ← u 
+21
+22      return dist[], prev[]
+
+1  S ← empty sequence
+2  u ← target
+3  while prev[u] is defined:                  // Construct the shortest path with a stack S
+4      insert u at the beginning of S         // Push the vertex onto the stack
+5      u ← prev[u]                            // Traverse from target to source
+6  insert u at the beginning of S             // Push the source onto the stack
+
+1  function Dijkstra(Graph, source):
+2      dist[source] ← 0                                    // Initialization
+3
+4      create vertex set Q
+5
+6      for each vertex v in Graph:           
+7          if v ≠ source
+8              dist[v] ← INFINITY                          // Unknown distance from source to v
+9              prev[v] ← UNDEFINED                         // Predecessor of v
+10
+11         Q.add_with_priority(v, dist[v])
+12
+13
+14     while Q is not empty:                              // The main loop
+15         u ← Q.extract_min()                            // Remove and return best vertex
+16         for each neighbor v of u:                       // only v that is still in Q
+17             alt = dist[u] + length(u, v) 
+18             if alt < dist[v]
+19                 dist[v] ← alt
+20                 prev[v] ← u
+21                 Q.decrease_priority(v, alt)
+22
+23     return dist[], prev[]
+
+procedure UniformCostSearch(Graph, start, goal)
+  node ← start
+  cost ← 0
+  frontier ← priority queue containing node only
+  explored ← empty set
+  do
+    if frontier is empty
+      return failure
+    node ← frontier.pop()
+    if node is goal
+      return solution
+    explored.add(node)
+    for each of node's neighbors n
+      if n is not in explored
+        if n is not in frontier
+          frontier.add(n)
+        else if n is in frontier with higher cost
+          replace existing node with n
